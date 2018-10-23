@@ -1,0 +1,58 @@
+
+%\geometry
+\usepackage[a4paper]{geometry}
+\geometry{left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm} % mt choice
+
+% définir le style des textes et paragraphes
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{enumerate}
+
+% for paragraphe spacing
+\usepackage{ragged2e} % for paragraphe spacing and justifying of the whole document
+
+\usepackage{lipsum} %Pour faire des essais
+
+% Choix de la langue
+\usepackage[english,francais]{babel}
+
+% Lmodern et substitution des petites capitales grasses manquantes
+\usepackage{lmodern}
+\rmfamily
+\DeclareFontShape{T1}{lmr}{b}{sc}{<->ssub*cmr/bx/sc}{}
+\DeclareFontShape{T1}{lmr}{bx}{sc}{<->ssub*cmr/bx/sc}{}
+
+
+% Différents paquets pour les maths
+\usepackage{amssymb, amsmath, amsthm, amscd}
+\usepackage{mathrsfs}
+
+% Pour les figures
+\usepackage{subfig}
+
+%Pour la page de garde
+\usepackage{tabularx} % Permet d'utiliser l'environnement tabularx
+\usepackage{calc} % Pour pouvoir donner des formules dans les dÈfinitions de longueur
+\usepackage{graphicx} % Pour inclure des graphiques 
+% Attention : pour inclure des .jpg comme dans l'exemple (ou des .png ou .pdf)
+% il faut compiler directement en pdf (commande pdflatex).
+% Pour inclure des .eps, il faut compiler avec latex + dvips + ps2pdf.
+
+% Pour avoir des liens hypertexte dans le document compilÈ
+\usepackage{hyperref}
+%\usepackage{nohyperref} % ‡ utiliser pour pouvoir compiler sans gÈnÈrer des liens
+
+% Pour mettre la bibliographie dans la table des matiËres avec le bon numÈro de page (voir plus loin)
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+
+% Table de matières pour les chapitres 
+\usepackage[french]{minitoc}
+\setcounter{minitocdepth}{2}
+\mtcindent=15pt % Use \minitoc where to put a table of contents
+
+% Pour l'index des notations
+\usepackage{makeidx}
+
+\usepackage{epstopdf}
+
+\makeindex

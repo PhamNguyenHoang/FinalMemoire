@@ -1,0 +1,261 @@
+%
+%
+% !TEX encoding = UTF-8 Unicode
+\documentclass[a4paper,11pt,oneside]{book}
+
+% ===========FORMATS DIVERS ===============================
+\input{form} % format personnel du documents
+% ===========FORMATS DIVERS ===============================
+
+
+% ===========COMMANDES DIVERSES =======================
+% Macros-commandes : appel ‡ des fichiers exterieurs
+\input{macro} % macros diverses personnelles 
+
+% (en-tites et pieds de page, environnements de theoremes) - voir macros.tex
+\input{math} % macros mathematiques - voir le fichier macrosmath.tex
+% ===========COMMANDES DIVERSES =======================
+
+%for comments in documents
+\usepackage[flushleft]{threeparttable}
+\usepackage{longtable}
+
+\usepackage{tikz}
+\usepackage{multirow}
+\usetikzlibrary{arrows,automata,positioning,shapes}
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+\usepackage[boxruled, linesnumbered]{algorithm2e}
+%\usepackage{pepa}
+\usepackage{listings}
+\usepackage{textcomp}
+
+\usepackage{mdwtab,tabularx}
+\newcommand\T{\rule{0pt}{2.6ex}}      
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+
+\usepackage[nounderscore]{syntax}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+\usepackage{caption}
+\captionsetup[figure]{font=small}
+\usepackage{graphicx}
+\usepackage{mwe}
+%\usepackage{indentfirst}
+
+
+%Definit les nouvaux command 
+
+\newcommand{\ra}{$\rightarrow$}
+\newcommand{\dn}{donn\'ees }
+\newcommand{\ep}{\'epid\'emiologie }
+\newcommand{\evn}{\'environnementaux }
+\newcommand{\st}{s\'eries temporelles }
+\newcommand{\mt}{m\'ethode }
+\newcommand{\Rs}{R\'esultats }
+\newcommand{\rs}{r\'esultats }
+
+
+
+%\input{smalltalk}
+%\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+%\lstset{numbers=left,escapeinside=||}
+%\let\origthelstnumber\thelstnumber
+
+\makeatletter
+\newcommand*\Suppressnumber{%
+  \lst@AddToHook{OnNewLine}{%
+    \let\thelstnumber\relax%
+     \advance\c@lstnumber-\@ne\relax%
+    }%
+}
+
+\newcommand*\Reactivatenumber[1]{%
+  \setcounter{lstnumber}{\numexpr#1-1\relax}
+  \lst@AddToHook{OnNewLine}{%
+   \let\thelstnumber\origthelstnumber%
+   \refstepcounter{lstnumber}
+  }%
+}
+\makeatother
+
+
+% ============INFO DU DOCUMENT ==========================
+\title{mémoire de thèse}
+\author{PHAM Nguyen Hoang}
+% ============INFO DU DOCUMENT ==========================
+
+\begin{document}
+
+\pagenumbering{roman}
+
+% ======== DEBUT DU DOCUMENT ===========================
+
+
+% ====FRONTMATTER=====================
+\frontmatter
+% Pour basculer la numÈrotation des pages en chiffres romains, jusqu'‡ la
+% table des matiËres. DÈconseillÈ par le ministËre !
+
+% ====PAGE DE GARDE=====================
+\include{titre}
+
+%\begin{justify}%\justifying
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\setlength{\parskip}{0.75\baselineskip}% 0.75 space of paragraphes
+
+
+% ====DEDICADE ET EPIGRAPHE=====================
+%\include{dedicate}
+% ====DEDICADE ET EPIGRAPHE=====================
+
+
+% ====REMERCIEMENTS=====================
+ \include{remerciement}
+% ====REMERCIEMENTS=====================
+
+
+% ====RESUME=====================
+\include{resume}
+% ====RESUME=====================
+
+
+% ====TABLE DES MATIÈRES=====================
+{\setlength{\parskip}{0pt} % remove paragraphe spacing
+\setcounter{tocdepth}{2} % pour rÈgler sa profondeur - par dÈfaut : 2
+\setcounter{secnumdepth}{2} 
+\pdfbookmark[0]{Table des matières}{tablematieres} % pour ajouter la table des matiËres dans l'``index'' du fichier compilÈ
+\dominitoc
+\tableofcontents  % pour afficher la table des 
+}
+% ====TABLE DES MATIÈRES=====================
+
+
+% ====TABLE DES FIGURES=====================
+\listoffigures %\mtcaddchapter %\addcontentsline{toc}{chapter}{List of Tables}
+% ====TABLE DES FIGURES=====================
+
+
+% ====LISTE DES TABLEAUX=====================
+\listoftables %\mtcaddchapter %\addcontentsline{toc}{chapter}{List of Tables}
+% ====LISTE DES TABLEAUX=====================
+% ====FRONTMATTER=====================
+%\adjustmtc
+
+
+% ====MAINMATTER=====================
+\mainmatter
+% On bascule la numÈrotation des pages en chiffres arabes jusqu'‡ la fin du
+% document - la numÈrotation reprend ‡ 1 (toujours dÈconseillÈ par le ministËre)
+
+% ====INTRODUCTION=====================
+\include{chap1}
+%
+%% ====CHAPITRES DE LA THÈSE=====================
+\include{chap2}
+\include{chap3}
+\include{chap4}
+\include{chap5}
+\include{chap6}
+
+% ====CONCLUSION=====================
+\include{conclusion}
+% ====CONCLUSION=====================
+
+
+% =========== BIBLIOGRAPHIE =============================
+%% Choix du style 
+%% En franÁais
+%\bibliographystyle{alpha-fr} % style alphabÈtique en franÁais
+%% En anglais
+\bibliographystyle{alpha} % style alphabÈtique en anglais
+%\bibliographystyle{plain} % style numÈrotÈ en anglais
+%%% Il y a plein d'autres possibilitÈs
+%%% Fabrication de la biblio
+
+
+\begin{thebibliography}{00}
+%Chapitre 1 + 2
+\bibitem{snow1855}SNOW, John. On the mode of communication of cholera. John Churchill, 1855.
+\bibitem{kermark1927}KERMARK, M.; MCKENDRICK, A. Contributions to the mathematical theory of epidemics. Part I. Proc. r. soc. a, 1927, 115.5: 700-721.
+\bibitem{kermack1932}KERMACK, William Ogilvy; MCKENDRICK, Anderson G. Contributions to the mathematical theory of epidemics. II.—The problem of endemicity. Proc. R. Soc. Lond. A, 1932, 138.834: 55-83.
+\bibitem{kermack1933}KERMACK, William Ogilvy; MCKENDRICK, Anderson G. Contributions to the mathematical theory of epidemics. III.—Further studies of the problem of endemicity. Proc. R. Soc. Lond. A, 1933, 141.843: 94-122.
+\bibitem{doll1964}DOLL, Richard; HILL, Austin Bradford. Mortality in relation to smoking: ten years' observations of British doctors. British medical journal, 1964, 1.5395: 1399.
+\bibitem{bhatt2013}BHATT, Samir, et al. The global distribution and burden of dengue. Nature, 2013, 496.7446: 504.
+\bibitem{zhang2008}ZHANG, Ying; BI, Peng; HILLER, Janet E. Climate change and the transmission of vector-borne diseases: a review. Asia Pacific Journal of Public Health, 2008, 20.1: 64-76.
+\bibitem{cummings2009}CUMMINGS, Derek AT, et al. The impact of the demographic transition on dengue in Thailand: insights from a statistical analysis and mathematical modeling. PLoS medicine, 2009, 6.9: e1000139.
+\bibitem{barreto2008}BARRETO, Florisneide R., et al. Spread pattern of the first dengue epidemic in the city of Salvador, Brazil. BMC Public Health, 2008, 8.1: 51.
+\bibitem{hales1996}HALES, S.; WEINSTEIN, P.; WOODWARD, A. Dengue fever epidemics in the South Pacific: driven by El Niño southern oscillation?. The Lancet, 1996, 348.9042: 1664-1665.
+\bibitem{hales1999}HALES, Simon, et al. El Niño and the dynamics of vectorborne disease transmission. Environmental Health Perspectives, 1999, 107.2: 99.
+\bibitem{cazelles2005}CAZELLES, Bernard, et al. Nonstationary influence of El Nino on the synchronous dengue epidemics in Thailand. PLoS medicine, 2005, 2.4: e106.
+\bibitem{teixeira2006}BARRETO, Mauricio L.; TEIXEIRA, Maria Gloria. Dengue fever: a call for local national and international action. Lancet, 2008, 372.9634: 205.
+\bibitem{gubler2004}GUBLER, Duane J. Cities spawn epidemic dengue viruses. Nature medicine, 2004, 10.2: 129.
+\bibitem{cummings2004}CUMMINGS, Derek AT, et al. Travelling waves in the occurrence of dengue haemorrhagic fever in Thailand. Nature, 2004, 427.6972: 344.
+\bibitem{van2015}VAN PANHUIS, Willem G., et al. Region-wide synchrony and traveling waves of dengue across eight countries in Southeast Asia. Proceedings of the National Academy of Sciences, 2015, 112.42: 13069-13074.
+\bibitem{schmidt2011}SCHMIDT, Wolf-Peter, et al. Population density, water supply, and the risk of dengue fever in Vietnam: cohort study and spatial analysis. PLoS medicine, 2011, 8.8: e1001082.
+\bibitem{hu2013}THANH TOAN, Do Thi, et al. Hot spot detection and spatio-temporal dispersion of dengue fever in Hanoi, Vietnam. Global health action, 2013, 6.1: 18632.
+\bibitem{do2014}DO, Thi Thanh Toan, et al. Climatic-driven seasonality of emerging dengue fever in Hanoi, Vietnam. BMC public health, 2014, 14.1: 1078.
+\bibitem{le2015}LE VIET, Thanh, et al. A dengue outbreak on a floating village at Cat Ba Island in Vietnam. BMC public health, 2015, 15.1: 940.
+\bibitem{thai2010}THAI, Khoa TD, et al. Dengue dynamics in Binh Thuan province, southern Vietnam: periodicity, synchronicity and climate variability. PLoS neglected tropical diseases, 2010, 4.7: e747.
+%Chapitre 3 
+\bibitem{batista2011}BATISTA, Gustavo EAPA; WANG, Xiaoyue; KEOGH, Eamonn J. A complexity-invariant distance measure for time series. In: Proceedings of the 2011 SIAM international conference on data mining. Society for Industrial and Applied Mathematics, 2011. p. 699-710.
+\bibitem{kruskal1983}KRUSKAL, Joseph B.; SANKOFF, David (ed.). Time Warps, String Edits, and Macromolecules: The Theory and Practice of Sequence Comparison. Addison-Wesley, 1983.
+\bibitem{keogh2001}KEOGH, Eamonn J.; PAZZANI, Michael J. Derivative dynamic time warping. In: Proceedings of the 2001 SIAM International Conference on Data Mining. Society for Industrial and Applied Mathematics, 2001. p. 1-11.
+\bibitem{xie2010}XIE, Ying; WILTGEN, Bryan. Adaptive feature based dynamic time warping. International Journal of Computer Science and Network Security, 2010, 10.1: 264-273.
+\bibitem{morse2007}MORSE, Michael D.; PATEL, Jignesh M. An efficient and accurate method for evaluating time series similarity. In: Proceedings of the 2007 ACM SIGMOD international conference on Management of data. ACM, 2007. p. 569-580.
+\bibitem{rousseeuw1987}ROUSSEEUW, Peter J. Silhouettes: a graphical aid to the interpretation and validation of cluster analysis. Journal of computational and applied mathematics, 1987, 20: 53-65.
+%Chapitre 4
+\bibitem{gabor1946}GABOR, Dennis. Theory of communication. Part 1: The analysis of information. Journal of the Institution of Electrical Engineers-Part III: Radio and Communication Engineering, 1946, 93.26: 429-441.
+\bibitem{kaiser1994}KAISER, W. A. False-positive results in dynamic MR mammography. Causes, frequency, and methods to avoid. Magnetic resonance imaging clinics of North America, 1994, 2.4: 539-555.
+%Chapitre 5
+\bibitem{granger1969}GRANGER, Clive WJ. Investigating causal relations by econometric models and cross-spectral methods. Econometrica: Journal of the Econometric Society, 1969, 424-438.
+\bibitem{granger1980}GRANGER, Clive WJ. Testing for causality: a personal viewpoint. Journal of Economic Dynamics and control, 1980, 2: 329-352.
+\bibitem{geweke1982}GEWEKE, John. Measurement of linear dependence and feedback between multiple time series. Journal of the American statistical association, 1982, 77.378: 304-313.
+\bibitem{pfaff2013package}PFAFF, Bernhard; STIGLER, Matthieu; PFAFF, Maintainer Bernhard. Package ‘vars’. Online] https://cran. r-project. org/web/packages/vars/vars. pdf, 2018.
+\bibitem{hoang2016}HOANG, Pham Nguyen, et al. Causality analysis between climatic factors and dengue fever using the Granger causality. In: Computing \& Communication Technologies, Research, Innovation, and Vision for the Future (RIVF), 2016 IEEE RIVF International Conference on. IEEE, 2016. p. 49-54.
+%Chapitre 6
+\bibitem{sugihara2012}SUGIHARA, George, et al. Detecting causality in complex ecosystems. science, 2012, 1227079.
+\bibitem{tsonis2015}TSONIS, Anastasios A., et al. Dynamical evidence for causality between galactic cosmic rays and interannual variation in global temperature. Proceedings of the National Academy of Sciences, 2015, 112.11: 3253-3256.
+\bibitem{deyle2016}DEYLE, Ethan R., et al. Global environmental drivers of influenza. Proceedings of the National Academy of Sciences, 2016, 113.46: 13081-13086.
+\end{thebibliography}
+
+
+
+%\bibliography{bibliothese} % pour afficher la biblio
+% utilise le fichier bibliothese.bib
+
+% Remarque : l'ajout de la biblio ‡ la table des matiËres se fait par le
+% paquet tocbibind (car la commande addcontentsline ne fabrique pas le bon
+% numÈro de page)
+% =========== BIBLIOGRAPHIE =============================
+% ====MAINMATTER=====================
+
+
+% ====APPENDIX=====================
+\appendix
+% ====ANNEXES====================
+\include{annexe}
+% ====ANNEXES====================
+
+% ==== INDEX DES NOTATIONS ==========================
+%\cleardoublepage % pour forcer l'index ‡ apparaÓtre sur une page impaire
+%\renewcommand{\indexname}{Index des notations} % pour changer le nom de l'index
+%\printindex % pour afficher l'index
+% ==== INDEX DES NOTATIONS ==========================
+
+
+% ====Notations=====================
+%\include{notations}
+% ====Notations=====================
+
+
+%\end{justify}
+
+
+
+
+
+\end{document}

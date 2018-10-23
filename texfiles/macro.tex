@@ -1,0 +1,146 @@
+% !TEX encoding = UTF-8 Unicode
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EN-TETES ET PIEDS DE PAGE
+\usepackage{fancyhdr}
+\pagestyle{fancy}% pour activer le style de pages personnalisÈ
+\fancyhf{}%remise ‡ zÈro des en-tÍte et pied de page
+\setlength{\headheight}{14pt} % pour fixer la hauteur de l'espace rÈservÈ ‡ l'en-tÍte du haut
+
+%%% Pas de numÈro de page sur la premiËre page des chapitres
+\makeatletter
+\let\ps@plain=\ps@empty
+\makeatother
+
+%===================== Style 1 =================================================
+%En-tÍte : 
+% * dans la boite de droite (R), pour les pages impaires (O)
+% * et dans la boite de gauche (L), pour les pages paires (E)
+% mettre le numÈro de page (\thepage).
+\fancyhead[RO,LE]{% 
+\thepage
+}
+\fancyhead[LO]{\scshape \nouppercase{\rightmark}}  %%%Section
+\fancyhead[RE]{\scshape \nouppercase{\leftmark}} %%% Chapitre 
+\renewcommand{\headrulewidth}{.4pt}
+\fancyfoot{}
+
+
+%================================== Style 2 ====================================
+
+% \fancyfoot[RO,LE]{% Boite de droite (R), pages impaires(O) et Boites de gauche pages paires
+% \thepage
+% }
+% \fancyhead[CO]{\slshape \nouppercase{\rightmark}}  %%%Section
+% \fancyhead[CE]{\slshape \nouppercase{\leftmark}} %%% Chapitre 
+% \renewcommand{\headrulewidth}{.4pt}
+
+% Remarques generales :
+% nouppercase permet l'affichage en minuscules au lieu de majuscules
+% slshape permet l'affichage en lettres penchÈs
+% scshape permet l'affichage en petites capitales
+
+% Pour que les pages paires sans texte (par exemple, ‡ la fin d'un chapitre et
+% avant un autre), ne contiennent ni en-tÍte ni pied de page (source :
+% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=reallyblank)
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{%
+  \clearpage
+  {\pagestyle{empty}\origdoublepage}%
+}
+\let\cleardoublepage\clearemptydoublepage
+
+% RÈglage fin des notes de bas de page
+\FrenchFootnotes % pour les notes de bas de page ‡ la franÁaise
+\AddThinSpaceBeforeFootnotes % pour avoir une espace fine entre le mot et l'appel de note
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CHAPITRE ETOILE
+%% avec rÈfÈrence dans la table des matiËres et les bons en-tÍtes
+%% il sert pour l'introduction, la page de notations.
+\newcommand*\chapterstar[1]{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}%
+  \markboth{#1}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ENVIRONNEMENTS DE THEOREMES
+\theoremstyle{plain} % style plain
+\newtheorem{theo}{Théorème}[chapter]
+\newtheorem{cor}[theo]{Corollaire}
+\newtheorem{prop}[theo]{Proposition}
+\newtheorem{lem}[theo]{Lemme}
+\newtheorem{conj}[theo]{Conjecture}
+\newtheorem*{theoetoile}{Théorème} % thÈorËme non numÈrotÈ
+\newtheorem*{conjetoile}{Conjecture} % conjecture non numÈrotÈe
+
+\theoremstyle{definition} % style definition
+\newtheorem{defi}[theo]{Définition}
+\newtheorem{exemple}[theo]{Exemple}
+\newtheorem{question}[theo]{Question}
+\newtheorem{remarque}[theo]{Remarque}
+\newtheorem{notation}[theo]{Notation}
+
+% Pour renommer ``preuve'' en ``dÈmonstration''
+\renewcommand{\proofname}{Démonstration}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ENVIRONNEMENTS DEDICACE ET EPIGRAPHE
+\newenvironment{dedicace}{%
+  \newpage\thispagestyle{empty}
+  \hfill\begin{minipage}{100mm}\begin{flushright}\it}{%
+  \end{flushright}\end{minipage}\vfill}
+
+\newenvironment{epigraphe}{%
+  \hfill\begin{minipage}{60mm}\begin{flushright}\footnotesize\it}{%
+  \end{flushright}\end{minipage}\hspace*{7mm}\vfill}
+  
+  
+%\NeedsTeXFormat{LaTeX2e}
+%\newif\if@sommairechap \@sommairechapfalse
+%\DeclareOption{sommairechap}{\@sommairechaptrue}
+%\ProcessOptions
+
+ % Gestion Èventuel des sommaires en dÈbut de chapitre
+%\if@sommairechap
+%  \RequirePackage[french]{minitoc}
+%  \dominitoc
+%  \setlength{\mtcindent}{0em}
+%  \renewcommand{\mtifont}{\large\rm\scshape}
+%  \renewcommand{\mtcSfont}{\small\rm\scshape}
+%\if
+%\RequirePackage{tocloft}
+%\renewcommand{\cftsubsecfont}{\small}
+%\renewcommand{\cftsecfont}{\normalsize\scshape}
+%\renewcommand{\cftchapfont}{\large\scshape}
+%\renewcommand{\cfttoctitlefont}{\Huge\scshape}
+%\renewcommand{\cftloftitlefont}{\Huge\scshape}
+%
+%
+%
+%% ==========================================================================
+%% PAGE DE GARDE DES CHAPITRES
+%% Le rÈsumÈ + le minitoc Èventuel
+%\newenvironment{chapintro}{%
+%  \if@sommairechap \nomtcrule \vspace{1.5cm} \minitoc[l] \fi}{%
+%  \cleardoublepage
+%}
+% 
+%% chapitre numÈrotÈ
+%\newfont{\chapterNumber}{eurb10 scaled 7000}
+%\renewcommand*{\@makechapterhead}[1]{%
+%  \thispagestyle{plain}
+%  \marginpar{\vspace*{1.5em}\flushright\chapterNumber\thechapter}
+%  \begin{flushleft}\nobreak\Huge\sc#1\end{flushleft}
+%  \vspace{3cm}
+%}
+%% chapitre non numÈrotÈ (*) 
+%\renewcommand*{\@makeschapterhead}[1]{%  
+%  \markboth{#1}{#1}
+%  \thispagestyle{plain}
+%  \begin{flushleft}\nobreak\Huge\sc #1\end{flushleft}
+%  \vspace{3cm}
+%  \if@sommairechap \mtcaddchapter \fi
+%}
