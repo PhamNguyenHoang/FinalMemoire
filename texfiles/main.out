@@ -1,0 +1,51 @@
+\BOOKMARK [0][-]{garde.0}{Page de garde}{}% 1
+\BOOKMARK [1][-]{remerciements.1}{Remerciements}{garde.0}% 2
+\BOOKMARK [0][-]{resume.0}{R\351sum\351}{}% 3
+\BOOKMARK [0][-]{tablematieres.0}{Table des mati\350res}{}% 4
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
+\BOOKMARK [1][-]{section.1.1}{Contexte}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.1}{Histoire de l'\351pid\351miologie}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.2}{Port\351e, applications et difficult\351es de l'\351pid\351miologie }{section.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.1.3}{Les r\351alisations de l'\351pid\351miologie}{section.1.1}% 9
+\BOOKMARK [2][-]{subsection.1.1.4}{Dengue}{section.1.1}% 10
+\BOOKMARK [1][-]{section.1.2}{L'\351tat de l'art}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.3}{Notre proposition}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.4}{La structure de la th\350se}{chapter.1}% 13
+\BOOKMARK [0][-]{chapter.2}{Donn\351es}{}% 14
+\BOOKMARK [1][-]{section.2.1}{Les s\351ries temporelles}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.1.1}{D\351finition}{section.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.1.2}{Analyse des s\351ries temporelles}{section.2.1}% 17
+\BOOKMARK [1][-]{section.2.2}{Les donn\351es de la dengue}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.3}{Les donn\351es environnementaux}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.4}{Les donn\351es du Vietnam}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.4.1}{Le Vietnam}{section.2.4}% 21
+\BOOKMARK [2][-]{subsection.2.4.2}{Les \351tapes pr\351-traitements des donn\351es du Vietnam}{section.2.4}% 22
+\BOOKMARK [0][-]{chapter.3}{D\351tectez des zones \351pid\351miologiques.}{}% 23
+\BOOKMARK [1][-]{section.3.1}{Distance entres les s\351ries temporelles }{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.1.1}{Distance Euclidienne}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.2}{Complexe invariance distance - CID}{section.3.1}% 26
+\BOOKMARK [2][-]{subsection.3.1.3}{Dynamic times wrapping - DTW}{section.3.1}% 27
+\BOOKMARK [2][-]{subsection.3.1.4}{Derivative dynamic times wrapping - DDTW}{section.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.1.5}{Adaptive Feature Base Dynamic Time Warping }{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.6}{Fast time series evaluation - FTSE}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.7}{K-means clustering}{section.3.1}% 31
+\BOOKMARK [1][-]{section.3.2}{ Analysis de Silhouette}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.3}{Clustering les donn\351es de la dengue}{chapter.3}% 33
+\BOOKMARK [0][-]{chapter.4}{Identifier la relation entre les facteurs climatiques et l'influence de la dengue.}{}% 34
+\BOOKMARK [1][-]{section.4.1}{M\351thodologie}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.2}{R\351sultats d'exp\351rimentaux}{chapter.4}% 36
+\BOOKMARK [0][-]{chapter.5}{Analyse approfondie de la relation entre l'\351pid\351mie de la dengue et les facteurs environnement }{}% 37
+\BOOKMARK [1][-]{section.5.1}{M\351thodologie}{chapter.5}% 38
+\BOOKMARK [2][-]{subsection.5.1.1}{Le mod\350le autor\351gressive - AR}{section.5.1}% 39
+\BOOKMARK [2][-]{subsection.5.1.2}{Le mod\350le autoregressive vectorielle - VAR}{section.5.1}% 40
+\BOOKMARK [2][-]{subsection.5.1.3}{La m\351thode causalit\351 de Granger}{section.5.1}% 41
+\BOOKMARK [1][-]{section.5.2}{R\351sultats }{chapter.5}% 42
+\BOOKMARK [2][-]{subsection.5.2.1}{R\351sultats d'analyse univariable}{section.5.2}% 43
+\BOOKMARK [2][-]{subsection.5.2.2}{R\351sultats d'analyse multivariable}{section.5.2}% 44
+\BOOKMARK [2][-]{subsection.5.2.3}{R\351sultats d'analyse sous-s\351quence}{section.5.2}% 45
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 46
+\BOOKMARK [1][-]{section.6.1}{R\351sultats de la th\350se}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.2}{Perspectives}{chapter.6}% 48
+\BOOKMARK [0][-]{chapter*.48}{Bibliographie}{}% 49
+\BOOKMARK [0][-]{appendix.A}{Les r\351sultats compl\351mentaires des m\351thode utilisent }{}% 50
+\BOOKMARK [1][-]{section.A.1}{Exploration des r\351sultats d'analyse sous-s\351quence de la m\351thode Causalit\351 de Granger uni-variable et multivariable}{appendix.A}% 51

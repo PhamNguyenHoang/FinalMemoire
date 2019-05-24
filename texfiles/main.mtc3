@@ -1,0 +1,10 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Distance entres les s\'eries temporelles }{\reset@font\mtcSfont 19}{section.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.1}Distance Euclidienne}{\reset@font\mtcSSfont 20}{subsection.3.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.2}Complexe invariance distance - CID}{\reset@font\mtcSSfont 20}{subsection.3.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.3}Dynamic times wrapping - DTW}{\reset@font\mtcSSfont 20}{subsection.3.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.4}Derivative dynamic times wrapping - DDTW}{\reset@font\mtcSSfont 21}{subsection.3.1.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.5}Adaptive Feature Base Dynamic Time Warping }{\reset@font\mtcSSfont 21}{subsection.3.1.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.6}Fast time series evaluation - FTSE}{\reset@font\mtcSSfont 22}{subsection.3.1.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.7}K-means clustering}{\reset@font\mtcSSfont 23}{subsection.3.1.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2} Analysis de Silhouette}{\reset@font\mtcSfont 24}{section.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Clustering les donn\IeC {\'e}es de la dengue}{\reset@font\mtcSfont 24}{section.3.3}}

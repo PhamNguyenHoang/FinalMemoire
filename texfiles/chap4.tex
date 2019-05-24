@@ -1,7 +1,13 @@
 % !TEX encoding = UTF-8 Unicode
 
-\chapter{La \mt d'analyse ondelette}
+\chapter{Identifier la relation entre les facteurs climatiques et l'influence de la dengue.}
 \label{chap4}
+
+Dans la chapitre 3, nous avons trouvé des zones épidémiques en utilisant la méthode clustering sur la donnée de l'épidémie de la dengue des 273 provinces dans la région Asie du Sud-Est dans la période de Janvier 1998 au Septembre 2010. Les provinces voisins dans des zones d'épidémie peuvent partager les mêmes conditions météorologiques et climatique. C'est la raison pour laquelle nous serons identifier la relation directe des facteurs climatiques sur la développement de la dengue dans cette période en utilisant les méthodes d'analyse ondelette, . 
+
+Nous représentons d'abord les théories sur la transformé de Fourier - un outil mathématique important dans la domaine traitement du signal. Puis, la méthodologie de la méthode d'analyse ondelette sera introduit dans la section suivant. Ensuite, les résultats d'expérimentaux doit être représenter dans la dernier section de cette chapitre. 
+
+%les nous avons appliqué la méthode d'analyse ondelette pour analyser la relation entre le taux d'infection et les facteurs climatiques des 64 provinces du Vietnam dans la période Janvier 1998 - Septembre 2010. Dans le chapitre suivant, nous allons utiliser une autre méthode pour re-analyser les liens de l'épidémie de la dengue et les facteurs climatiques sur 64 provinces du Vietnam dans le même période. 
 
 \section {Méthodologie}
 Dans le domaine traitement du signal, la transformée de Fourier (FT) est un outil mathématique important car elle est un pont de connexion très important pour la représentation du signal entre le domaine spatial et le domaine fréquentiel. La transformée de Fourier est appelée la représentation du domaine de fréquence du signal origine. Le terme transformée de Fourier fait référence à la fois à la représentation dans le domaine fréquentiel et à l'opération mathématique qui associe la représentation du domaine fréquentiel à une fonction du temps. La figure \ref{Pic4_1} montre une exemple sur la représentation les signals de la taux d'infection et le température moyenne du province Cantho - Vietnam et leurs transformée de Fourier. 
@@ -78,12 +84,6 @@ $$\tau = \frac{R}{C}$$
 où $R$ est la somme total des région significatif parmi des cohérence des 2 signaux et $C$ est le nombre total des cohérences des 2 signaux. On conclus que la relation entre la situation de la dengue et le facteur climatique d'une province est significatif si son taux significatif est supérieur au seuil $s$ : 
 $$\tau \geq s, 0 < s < 1$$.
 On a montré les résultats expérimentaux avec les différentes valeurs de $s$ dans des figures \ref{Pic4_6}, \ref{Pic4_7}, \ref{Pic4_8}, \ref{Pic4_9} avec les seuil $s =  0.2, 0.3, 0.4, 0.5$. Un province est été coloré en couleur vert si son taux significatif $\tau$ est supérieur au seuil $s$ et en couleur gris si non. Les provinces en couleurs blanches sont des provinces avec les données manquantes. En observant la figure \ref{Pic4_6}, on trouve que la plupart des provinces au Vietnam ont le lien entre l'épidémie de la dengue et les facteurs climatiques avec le taux significatif supérieur 20\%. Sur la figure  \ref{Pic4_7} avec le seuil $s = 30\%$, on trouve que la température et l'humidité absolue sont influencé sur les provinces au Sud et au Centre du Vietnam, la pluviosité, l'humidité relative et l'heure du soleil sont influencé sur les provinces au Sud et au Centre et aussi sur les provinces au Nord du Vietnam. Dans le cas où le seuil $s$ est égale à 40\% et 50\% dans la figure \ref{Pic4_8}, \ref{Pic4_9}  , seulement quelques provinces au Sud du Vietnam qui ont le couleur verts. Cela indique que la situation de l'épidémie avaient une serrée relation avec les facteurs climatique sur les provinces au Sud du Vietnam. 
-
-Dans cette chapitre, nous avons appliqué la méthode d'analyse ondelette pour analyser la relation entre le taux d'infection et les facteurs climatiques des 64 provinces du Vietnam dans la période Janvier 1998 - Septembre 2010. Dans le chapitre suivant, nous allons utiliser une autre méthode pour re-analyser les liens de l'épidémie de la dengue et les facteurs climatiques sur 64 provinces du Vietnam dans le même période. 
-
-
-
-
 
 
 \begin{figure}[h]
